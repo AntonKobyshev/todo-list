@@ -1,21 +1,35 @@
+<script setup>
+import { Icon } from '@iconify/vue'
+</script>
+
 <template>
-<main>
-  <div class="about">
-    <div class="info">
-      <h2> Сreated by Anton Kobyshev.</h2>
+  <main>
+    <div class="about">
+      <div class="info">
+        <h2>Created by Anton Kobyshev</h2>
+      </div>
+      <div class="links">
+        <a href="https://github.com/AntonKobyshev" target="_blank">
+          <Icon icon="mdi:github" />
+          GitHub
+        </a>
+        <a href="https://antonkobyshev.github.io/Portfolio-Anton-Kobyshev/" target="_blank">
+          <Icon icon="zondicons:portfolio" />
+          Portfolio
+        </a>
+        <a href="https://t.me/Dweep23" target="_blank">
+          <Icon icon="ic:baseline-telegram" />
+          Telegram
+        </a>
+      </div>
     </div>
-    <div class="links">
-      <a href="https://github.com/your-username" target="_blank">GitHub</a>
-      <a href="https://portfolio-link.com" target="_blank">Portfolio</a>
-      <a href="https://t.me/your-telegram-username" target="_blank">Telegram</a>
-    </div>
-  </div>
   </main>
 </template>
 
-<style>
+<style lang="scss" scoped>
+@import '../assets/styles/index.scss';
   .about {
-    padding-top: 24px;
+    padding-top: 32px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -23,9 +37,9 @@
   }
 
   .info {
-    max-width: 800px;
+    max-width: 1040px;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
   }
 
   .links {
@@ -34,17 +48,25 @@
   }
 
   .links a {
-    display: inline-block;
+    display: inline-flex; /* Use inline-flex to align icon and text */
+    align-items: center; /* Vertically center icon and text */
     margin: 10px;
     padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
+    background-color: $secondary;
+    color: $text;
     text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    border-radius: 4px;
+    transition: $animation;
   }
 
   .links a:hover {
-    background-color: #0056b3;
+    background-color: $accent;
+    color: $white;
+  }
+
+  /* Styles for the Iconify icons */
+  .iconify {
+    font-size: 1.2rem; /* Adjust the size of the icons */
+    margin-right: 8px; /* Add some spacing between icon and text */
   }
 </style>
