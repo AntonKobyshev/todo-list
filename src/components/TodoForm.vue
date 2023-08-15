@@ -1,6 +1,6 @@
 <template>
   <div class="input-wrap" :class="{ 'input-err': todoState.invalid }">
-    <input type="text" v-model="todoState.todo" />
+    <input type="text" v-model="todoState.todo" @keydown.enter="handleEnterKey" />
     <TodoButton @click="createTodo()">Create</TodoButton>
   </div>
   <p v-show="todoState.invalid" class="err-msg">{{ todoState.errMsg }}</p>
@@ -28,6 +28,13 @@ const createTodo = () => {
   todoState.invalid = true;
   todoState.errMsg = 'Please add data and tap "Create"';
 };
+
+const handleEnterKey = () => {
+  if (event.key === "Enter") {
+    createTodo();
+  }
+};
+
 </script>
 
 <style lang="scss" scoped>
