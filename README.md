@@ -1,6 +1,4 @@
-Small Todo App on Vue 3 + Vite
-
-## Recommended IDE Setup
+## Small Todo App on Vue 3 + Vite
 
 ## Project Setup
 
